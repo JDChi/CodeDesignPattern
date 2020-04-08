@@ -1,11 +1,10 @@
+import '../bean/user_vo.dart';
+import 'i_user_controller.dart';
+
 /// 代理模式（Proxy Design Pattern）
 ///
 /// 在不改变原始类（或叫被代理类）代码的情况下，通过引入代理类来给原始类附加功能。
-abstract class IUserController {
-  UserVo login(String phone, String pwd);
 
-  UserVo register(String phone, String pwd);
-}
 
 class UserController implements IUserController {
   @override
@@ -48,4 +47,4 @@ void main() {
       new UserControllerProxy(new UserController());
 }
 
-class UserVo {}
+
