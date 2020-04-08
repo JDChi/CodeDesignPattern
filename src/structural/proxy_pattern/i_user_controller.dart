@@ -1,4 +1,4 @@
-import '../bean/user_vo.dart';
+import '../../bean/user_vo.dart';
 
 abstract class IUserController {
   UserVo login(String phone, String pwd);

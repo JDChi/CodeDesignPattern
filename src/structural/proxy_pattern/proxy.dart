@@ -1,4 +1,4 @@
-import '../bean/user_vo.dart';
+import '../../bean/user_vo.dart';
 import 'i_user_controller.dart';
 
 /// 代理模式（Proxy Design Pattern）
@@ -47,5 +47,3 @@ void main() {
   IUserController userController =
       new UserControllerProxy(new UserController());
 }
-
-
