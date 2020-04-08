@@ -4,7 +4,8 @@ import 'i_user_controller.dart';
 /// 代理模式（Proxy Design Pattern）
 ///
 /// 在不改变原始类（或叫被代理类）代码的情况下，通过引入代理类来给原始类附加功能。
-
+///
+/// 常用在业务系统中开发一些非功能性需求，比如：监控、统计、鉴权、限流、事务、幂等、日志。
 
 class UserController implements IUserController {
   @override
