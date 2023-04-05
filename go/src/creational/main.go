@@ -1,6 +1,6 @@
 package main
 
-import "src/src/structural/singleton"
+import "src/src/creational/singleton"
 
 func main() {
 	_ = singleton.GetOnceInstance()
