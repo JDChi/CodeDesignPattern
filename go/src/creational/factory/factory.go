@@ -29,7 +29,7 @@ func (p *ConcreteProduct) Use() {
 	fmt.Println("This is a concrete product")
 }
 
-func innerTest() {
+func innerMain() {
 	factory := ConcreteFactory{}
 	product := factory.FactoryMethod("shirdon")
 	product.Use()
