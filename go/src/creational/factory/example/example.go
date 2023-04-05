@@ -1,6 +1,8 @@
-package factory
+package main
 
 import "fmt"
+
+// 同一家工厂生产不同品牌的服装
 
 type IClothes interface {
 	setName(name string)
@@ -43,12 +45,12 @@ func newPeak() IClothes {
 	}
 }
 
-type ANTA struct {
+type Anta struct {
 	clothes
 }
 
-func newANTA() IClothes {
-	return &ANTA{
+func newAnta() IClothes {
+	return &Anta{
 		clothes: clothes{
 			name: "ANTA",
 			size: 4,
@@ -58,11 +60,28 @@ func newANTA() IClothes {
 
 func MakeClothes(clothesType string) (IClothes, error) {
 	if clothesType == "ANTA" {
-		return newANTA(), nil
+		return newAnta(), nil
 	}
 	if clothesType == "PEAK" {
 		return newPeak(), nil
 	}
 
 	return nil, fmt.Errorf("wrong clothes type passed")
+}
+
+func main() {
+	ANTA, _ := MakeClothes("ANTA")
+	PEAK, _ := MakeClothes("PEAK")
+
+	printDetail(ANTA)
+	printDetail(PEAK)
+
+}
+
+func printDetail(c IClothes) {
+	fmt.Printf("Clothes: %s", c.GetName())
+	fmt.Println()
+	fmt.Printf("Size: %d", c.GetSize())
+	fmt.Println()
+
 }
